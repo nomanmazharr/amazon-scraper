@@ -23,21 +23,6 @@ def load_data():
     df = pd.read_csv(input_file)
     return df
 
-# Convert product data to text documents
-# def create_documents(df):
-#     documents = []
-#     for _, row in df.iterrows():
-#         # Handle price conditionally
-#         price_str = f"${row['price']:.2f}" if pd.notna(row['price']) else 'N/A'
-#         # Handle rating conditionally
-#         rating_str = f"{row['rating']}★" if pd.notna(row['rating']) else 'N/A★'
-#         # Handle review count conditionally
-#         review_count_str = f"{row['review_count']} reviews" if pd.notna(row['review_count']) else 'N/A reviews'
-        
-#         doc = f"ASIN: {row['asin']}\nTitle: {row['title']}\nBrand: {row['brand']}\nPrice: {price_str}\nRating: {rating_str}\nReview Count: {review_count_str}"
-#         documents.append(doc)
-#     return documents
-
 def create_documents(df):
     documents = []
     for _, row in df.iterrows():
